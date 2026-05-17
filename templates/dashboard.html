@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<nav>
+  <h3>MiniSocial</h3>
+  <a href="/logout">Logout</a>
+</nav>
+
+<div class="container">
+
+  <div class="post-box">
+    <form method="POST" action="/post">
+      <textarea name="content" placeholder="What's on your mind?" required></textarea>
+      <button>Post</button>
+    </form>
+  </div>
+
+  {% for post in posts %}
+  <div class="post-card">
+    <p>{{ post[2] }}</p>
+  </div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>
+
